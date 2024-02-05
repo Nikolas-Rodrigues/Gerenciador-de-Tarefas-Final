@@ -73,22 +73,17 @@
     $usuario = "root";
     $senha = "";
 
-    // Verifica se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Obtém os dados do formulário
         $nome = $_POST["nome"];
         $telefone = $_POST["telefone"];
         $email = $_POST["email"];
 
-        // Conectar ao banco de dados
         $conn = new mysqli($hostname, $usuario, $senha, $bancodedados);
 
-        // Verifica a conexão
         if ($conn->connect_error) {
             die("Erro na conexão: " . $conn->connect_error);
         }
 
-        // Prepara e executa a instrução SQL para inserir os dados na tabela funcionario
         $sql = "INSERT INTO funcionario (nome, telefone, email) VALUES ('$nome', '$telefone', '$email')";
 
         if ($conn->query($sql) === TRUE) {
@@ -97,7 +92,6 @@
             echo "Erro ao adicionar funcionário: " . $conn->error;
         }
 
-        // Fecha a conexão com o banco de dados
         $conn->close();
     }
     ?>

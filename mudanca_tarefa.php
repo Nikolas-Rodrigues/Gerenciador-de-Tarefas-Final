@@ -163,11 +163,9 @@ if ($mysqli->connect_errno) {
                     '<option value="Concluido">Concluído</option>' +
                     '</select>';
             } else if (modificacaoSelecionada === "Id_Do_Responsavel" || modificacaoSelecionada === "descricao") {
-                // Adiciona campo de texto para as opções "Id_Do_Responsavel" e "descricao"
                 dropdownContainer.innerHTML = '<input type="text" id="novoValor" name="novoValor" required>';
             }
 
-            // Exibe o container apenas se a opção for prioridade, estado, Id_Do_Responsavel ou descricao
             dropdownContainer.style.display = (modificacaoSelecionada === "prioridade" || modificacaoSelecionada === "estado" || modificacaoSelecionada === "Id_Do_Responsavel" || modificacaoSelecionada === "descricao") ? "block" : "none";
         }
     </script>

@@ -91,7 +91,6 @@
             $stmt = $mysqli->prepare("DELETE FROM Tarefa WHERE id = ?");
             $stmt->bind_param("i", $idTarefaParaExcluir);
 
-            // Executar a exclusão
             if ($stmt->execute()) {
                 echo  "<script>alert('Tarefa excluída com sucesso');</script>";
             } else {

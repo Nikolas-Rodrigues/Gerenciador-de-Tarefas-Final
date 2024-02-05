@@ -88,30 +88,23 @@ $mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
 if ($mysqli->connect_errno) {
     echo "Falha ao conectar: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 } else {
-    // Consulta para a tabela de funcionários
     $consultaFuncionarios = "SELECT * FROM Funcionario ORDER BY Id ASC";
     $resultadoFuncionarios = $mysqli->query($consultaFuncionarios);
 
-    // Consulta para a tabela de tarefas
     $consultaTarefas = "SELECT * FROM Tarefa ORDER BY Prioridade ASC, Estado DESC";
     $resultadoTarefas = $mysqli->query($consultaTarefas);
 
-    // Consulta para contar a quantidade de ocorrências de cada id_do_responsavel na tabela de tarefas
     $consultaContagem = "SELECT Id_Do_Responsavel, COUNT(*) as contagem FROM Tarefa GROUP BY Id_Do_Responsavel HAVING COUNT(*) > 3";
     $resultadoContagem = $mysqli->query($consultaContagem);
 
-    // Verificar se as consultas foram bem-sucedidas
     if ($resultadoFuncionarios && $resultadoTarefas && $resultadoContagem) {
-        // Tabela de Funcionários
         echo '<table id="funcionarioTable" class="hidden">';
-        // Cabeçalho da tabela de funcionários
         echo '<tr>';
         echo '<th>ID</th>';
         echo '<th>Nome</th>';
         echo '<th>Email</th>';
         echo '<th>Telefone</th>';
         echo '</tr>';
-        // Exibir os resultados da tabela de funcionários
         while ($linha = $resultadoFuncionarios->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $linha['Id'] . '</td>';
@@ -126,9 +119,7 @@ if ($mysqli->connect_errno) {
             <text id="tabela">Tabela de Tarefas</text>
         </div>
 <?php
-        // Tabela de Tarefas
         echo '<table id="tarefaTable" class="hidden">';
-        // Cabeçalho da tabela de tarefas
         echo '<tr>';
         echo '<th>id</th>';
         echo '<th>Descrição</th>';
@@ -136,7 +127,6 @@ if ($mysqli->connect_errno) {
         echo '<th>Prioridade</th>';
         echo '<th>Estado</th>';
         echo '</tr>';
-        // Exibir os resultados da tabela de tarefas
         while ($linha = $resultadoTarefas->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $linha['id'] . '</td>';
@@ -148,31 +138,26 @@ if ($mysqli->connect_errno) {
         }
         echo '</table>';
 
-        // Array para armazenar os ids que excedem o limite de 3 vezes
         $idsExcedentes = array();
 
         while ($linhaContagem = $resultadoContagem->fetch_assoc()) {
             $idResponsavel = $linhaContagem['Id_Do_Responsavel'];
             $contagem = $linhaContagem['contagem'];
 
-            // Adicionar ids ao array se excederem o limite
             if ($contagem > 3) {
                 $idsExcedentes[] = $idResponsavel;
             }
         }
 
-        // Exibir alerta se houver ids que excedem o limite
         if (!empty($idsExcedentes)) {
             echo '<script>';
             echo 'alert("Os seguintes responsáveis atingiram o limite de atividades: ' . implode(', ', $idsExcedentes) . '");';
             echo '</script>';
         }
     } else {
-        // Se alguma consulta falhou, exibir mensagem de erro
         echo 'Erro na consulta: ' . $mysqli->error;
     }
 
-    // Fechar a conexão
     $mysqli->close();
 }
 ?>

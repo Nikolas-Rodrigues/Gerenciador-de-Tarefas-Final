@@ -88,7 +88,6 @@
             $stmt = $mysqli->prepare("DELETE FROM Funcionario WHERE Id = ?");
             $stmt->bind_param("i", $idFuncionarioParaExcluir);
 
-            // Executar a exclusão
             if ($stmt->execute()) {
                 echo  "<script>alert('Funcionário excluído com sucesso');</script>";
             } else {

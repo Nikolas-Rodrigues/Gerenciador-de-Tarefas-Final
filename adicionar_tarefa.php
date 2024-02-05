@@ -73,7 +73,6 @@
     $usuario = "root";
     $senha = "";
 
-    // Função para adicionar tarefa
     function adicionarTarefa($descricao, $idDoResponsavel, $prioridade, $estado, $conn)
     {
         $sql = "INSERT INTO tarefa (descricao, Id_Do_Responsavel, prioridade, estado) 
@@ -86,26 +85,20 @@
         }
     }
 
-    // Verifica se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Obtém os dados do formulário
         $descricao = $_POST["descricao"];
         $idDoResponsavel = $_POST["Id_Do_Responsavel"];
         $prioridade = $_POST["prioridade"];
         $estado = $_POST["estado"];
 
-        // Conectar ao banco de dados
         $conn = new mysqli($hostname, $usuario, $senha, $bancodedados);
 
-        // Verifica a conexão
         if ($conn->connect_error) {
             die("Erro na conexão: " . $conn->connect_error);
         }
 
-        // Adiciona a tarefa e exibe a mensagem
         $mensagem = adicionarTarefa($descricao, $idDoResponsavel, $prioridade, $estado, $conn);
 
-        // Fecha a conexão com o banco de dados
         $conn->close();
 
         echo $mensagem;
