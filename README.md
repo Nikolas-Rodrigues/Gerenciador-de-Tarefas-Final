@@ -27,3 +27,5 @@ Ou acessando http://localhost/projeto1/menu.html
 
 
 Se tudo ocorreu certo aparecera desta forma:
+
+![imagem da pagina inicial](./menuProjeto.jpg)
