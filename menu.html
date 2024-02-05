@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 50%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        #botoes {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #botoes button {
+            width: 105%;
+        }
+    </style>
+</head>
+
+<body bgcolor="lightgray">
+    <div id="menu">
+        <h2>Home</h2>
+
+        <button onclick="ListarTarefa()">Listar Dados</button>
+
+        <div id="botoes">
+            <div>
+                <button onclick="AdicionarTareaf()">Adicionar Tarefa</button>
+                <br>
+                <br>
+                <button onclick="AlterarTarefa()">Alterar Tarefa</button>
+                <br>
+                <br>
+                <button onclick="ExclirTarefa()">Excluir Tarefa</button>
+            </div>
+            <div>
+                <button onclick="AdicionarFunc()">Adicionar Funcionario</button>
+                <br>
+                <br>
+                <button onclick="AlterarFunc()">Alterar Funcionario</button>
+                <br>
+                <br>
+                <button onclick="ExclirFunc()">Excluir Funcionario</button>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <script>
+        function ListarTarefa() {
+            window.location.href = 'index.php';
+        }
+        function AdicionarTareaf() {
+            window.location.href = 'adicionar_tarefa.php';
+        }
+        function AlterarTarefa() {
+            window.location.href = 'mudanca_tarefa.php';
+        }
+        function ExclirTarefa() {
+            window.location.href = 'excluir_tarefa.php';
+        }
+        function AdicionarFunc() {
+            window.location.href = 'adicionar_func.php';
+        }
+        function AlterarFunc() {
+            window.location.href = 'mudanca_func.php';
+        }
+        function ExclirFunc() {
+            window.location.href = 'excluir_func.php';
+        }
+    </script>
+</body>
+
+</html>
