@@ -1,12 +1,10 @@
-# Gerenciador-de-Tarefas-Final
-Este projeto foi feito em WAMP e utiliza html,scc, php, javascript e MySQL
+Este projeto foi feito em com o programa WAMP e utiliza html,scc, php, javascript e MySQL
+https://www.wampserver.com/en/
 
-Para fazer o download e configurar o wamp é necessario o seguinte passo a passo
-
-Visitar o link https://www.wampserver.com/en/
-Start using wampserver
-wamp server 64 bits(x64) 3.3.2
-Não é necessario preencher o formulario, pode apenas clicar em "you can download it directly."
-
-
+Ao baixar o wamp abra o navegador e pesquise: localhost/phpmyadmin
+usuario: root
+senha: 
+Servidor:mySql
+Apos entrar ir em exportar na parte superior da direita
+<img src="blob:https://web.whatsapp.com/a5707ac6-6971-44dc-b40a-b0b465136d1f" alt="">
 
