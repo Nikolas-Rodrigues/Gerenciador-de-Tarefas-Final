@@ -1,26 +1,24 @@
-Este projeto foi feito em com o programa WAMP e utiliza html,scc, php, javascript e MySQL
 
-[WAMP](https://www.wampserver.com).
+Este projeto foi desenvolvido com o programa WAMP e utiliza HTML, CSS, PHP, JavaScript e MySQL.
 
-Ao baixar o wamp abra o navegador e pesquise: localhost/phpmyadmin.
+[Link de Download do WAMP](https://www.wampserver.com/en/)
 
-usuario: root
+Ao baixar o WAMP, abra o navegador e pesquise: localhost/phpmyadmin.
 
-senha: deixe em branco
+Usuário: root
 
-Servidor:mySql
+Senha: deixe em branco
 
-Apos entrar ir em exportar na parte superior da direita
+Servidor: MySQL
 
-Escolher o Ficheiro: Projeto.sql
+Após entrar, vá em "Exportar" na parte superior direita.
 
-Apos isso no explorador de arquivos procurar a unidade em que foi instalado o WAMP
+Escolha o arquivo: Projeto.sql
 
-Acessar as pastas Wamp64 depois WWW
+Em seguida, no explorador de arquivos, procure a unidade em que o WAMP foi instalado.
 
-E salvar a pasta "Projeto1" dentro da pasta WWW
+Acesse as pastas Wamp64 e, em seguida, WWW.
 
-Ápos isso, abrir o navegador e acessar o [Sistema](http://localhost/projeto1/menu.html)
+Salve a pasta "Projeto1" dentro da pasta WWW.
 
-
-
+Após isso, abra o navegador e acesse o sistema.
