@@ -21,4 +21,6 @@ Acesse as pastas Wamp64 e, em seguida, WWW.
 
 Salve a pasta "Projeto1" dentro da pasta WWW.
 
-Após isso, abra o navegador e acesse o sistema. 
+Após isso, abra o navegador e acesse o [sistema](http://localhost/projeto1/menu.html) 
+
+Se tudo ocorreu certo aparecera desta forma:
